@@ -1,0 +1,233 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-display: 'Fraunces', Georgia, serif;
+    --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+    --font-mono: 'JetBrains Mono', monospace;
+  }
+
+  body {
+    font-family: var(--font-sans);
+    background-color: #05070E;
+    color: #F7F2E7;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, .font-serif-display {
+    font-family: var(--font-display);
+  }
+
+  .font-mono-archival {
+    font-family: var(--font-mono);
+    font-variant-numeric: tabular-nums;
+  }
+}
+
+/* Custom Museum Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #05070E;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(229, 184, 92, 0.25);
+  border-radius: 9999px;
+  border: 2px solid #05070E;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(229, 184, 92, 0.55);
+}
+
+/* Next-Level Keyframe Choreography */
+@keyframes goldShimmer {
+  0% {
+    background-position: -200% 50%;
+  }
+  100% {
+    background-position: 200% 50%;
+  }
+}
+
+@keyframes floatSlow {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-10px) rotate(1deg);
+  }
+}
+
+@keyframes pulseAura {
+  0%, 100% {
+    opacity: 0.35;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.7;
+    transform: scale(1.08);
+  }
+}
+
+@keyframes spinSlow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes spinReverseSlow {
+  from {
+    transform: rotate(360deg);
+  }
+  to {
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes marqueeInfinite {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes scanlineSweep {
+  0% {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    transform: translateY(400%);
+    opacity: 0;
+  }
+}
+
+@keyframes revealUp {
+  from {
+    opacity: 0;
+    transform: translateY(28px) scale(0.985);
+    filter: blur(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    filter: blur(0px);
+  }
+}
+
+.animate-gold-shimmer {
+  background: linear-gradient(
+    110deg,
+    #F7F2E7 15%,
+    #E5B85C 35%,
+    #FFD97D 50%,
+    #C86D51 65%,
+    #F7F2E7 85%
+  );
+  background-size: 250% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: goldShimmer 9s cubic-bezier(0.22, 1, 0.36, 1) infinite;
+}
+
+.animate-float-slow {
+  animation: floatSlow 7s ease-in-out infinite;
+}
+
+.animate-pulse-aura {
+  animation: pulseAura 6s ease-in-out infinite;
+}
+
+.animate-spin-slow {
+  animation: spinSlow 36s linear infinite;
+}
+
+.animate-spin-reverse-slow {
+  animation: spinReverseSlow 48s linear infinite;
+}
+
+.animate-marquee {
+  display: flex;
+  width: max-content;
+  animation: marqueeInfinite 55s linear infinite;
+}
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
+
+.animate-reveal-up {
+  animation: revealUp 0.75s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Capiz Shell & Obsidian Museum Surfaces */
+.capiz-glass {
+  background: linear-gradient(
+    145deg,
+    rgba(24, 32, 54, 0.76) 0%,
+    rgba(11, 16, 29, 0.88) 100%
+  );
+  backdrop-filter: blur(20px) saturate(150%);
+  -webkit-backdrop-filter: blur(20px) saturate(150%);
+  border: 1px solid rgba(229, 184, 92, 0.18);
+  box-shadow:
+    0 24px 60px -15px rgba(0, 0, 0, 0.75),
+    inset 0 1px 0 0 rgba(255, 248, 231, 0.12);
+}
+
+.capiz-card {
+  background: linear-gradient(
+    165deg,
+    rgba(20, 27, 45, 0.82) 0%,
+    rgba(9, 13, 24, 0.94) 100%
+  );
+  border: 1px solid rgba(247, 242, 231, 0.09);
+  box-shadow:
+    0 20px 50px -20px rgba(0, 0, 0, 0.8),
+    inset 0 1px 0 0 rgba(255, 248, 231, 0.08);
+  transition:
+    transform 0.55s cubic-bezier(0.22, 1, 0.36, 1),
+    border-color 0.45s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.55s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.capiz-card:hover {
+  border-color: rgba(229, 184, 92, 0.45);
+  box-shadow:
+    0 28px 65px -15px rgba(0, 0, 0, 0.9),
+    0 0 35px -8px rgba(229, 184, 92, 0.22),
+    inset 0 1px 0 0 rgba(255, 217, 125, 0.25);
+}
+
+/* Traditional Inabel / T'nalak Geometric Border Pattern */
+.inabel-border {
+  background-image: repeating-linear-gradient(
+    45deg,
+    rgba(229, 184, 92, 0.35) 0px,
+    rgba(229, 184, 92, 0.35) 4px,
+    transparent 4px,
+    transparent 8px,
+    rgba(200, 109, 81, 0.35) 8px,
+    rgba(200, 109, 81, 0.35) 12px,
+    transparent 12px,
+    transparent 16px
+  );
+}
+
+/* Capiz Window Pane Subtle Lattice Overlay */
+.capiz-lattice {
+  background-size: 64px 64px;
+  background-image:
+    linear-gradient(to right, rgba(247, 242, 231, 0.03) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(247, 242, 231, 0.03) 1px, transparent 1px);
+}
